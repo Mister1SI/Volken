@@ -14,7 +14,16 @@ private:
 	void cleanup();
 	void createInstance();
 	bool checkValidationLayerSupport();
-
+	std::vector<const char*> getRequiredExtensions();
+	static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
+		VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+		VkDebugUtilsMessageTypeFlagsEXT messageType,
+		const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,
+		void* pUserData);
+	void setupDebugMessenger();
+	void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator);
+	VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
+		const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger);
 
 
 	GLFWwindow* window;
@@ -29,6 +38,11 @@ private:
 #else
 	const bool enableValidationLayers = true;
 #endif 
+
+	VkDebugUtilsMessengerEXT debugMessenger;
+
+
+
 
 public:
 	void run();

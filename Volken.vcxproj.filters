@@ -42,6 +42,12 @@
     <ClCompile Include="CheckValidationLayerSupport.cpp">
       <Filter>Source Files\Volken\initVulkan</Filter>
     </ClCompile>
+    <ClCompile Include="GetRequiredExtentsions.cpp">
+      <Filter>Source Files\Volken\initVulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugCallback.cpp">
+      <Filter>Source Files\Volken\initVulkan</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">
