@@ -6,7 +6,9 @@ void Volken::initVulkan() {
 	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-	window = glfwCreateWindow(800, 600, "Volken", nullptr, nullptr);
+	window = glfwCreateWindow(WIDTH, HEIGHT, "Volken", nullptr, nullptr);
+
+	createInstance();
 }
 
 

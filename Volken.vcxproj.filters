@@ -39,6 +39,9 @@
     <ClCompile Include="CreateInstance.cpp">
       <Filter>Source Files\Volken\initVulkan</Filter>
     </ClCompile>
+    <ClCompile Include="CheckValidationLayerSupport.cpp">
+      <Filter>Source Files\Volken\initVulkan</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">

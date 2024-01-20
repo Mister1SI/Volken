@@ -1,6 +1,10 @@
 #include "Volken.h"
 
 void Volken::createInstance() {
+    if (enableValidationLayers && !checkValidationLayerSupport()) {
+        std::cout << "Validation layers were requested but the specified layers could not be found\n";
+    }
+
     VkApplicationInfo appInfo{};
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
     appInfo.pApplicationName = "Volken";
@@ -19,8 +23,9 @@ void Volken::createInstance() {
 
     createInfo.enabledExtensionCount = glfwExtensionCount;
     createInfo.ppEnabledExtensionNames = glfwExtensions;
-
     createInfo.enabledLayerCount = 0;
+
+    
 
     if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
         throw std::runtime_error("failed to create instance!");

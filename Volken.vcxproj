@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CheckValidationLayerSupport.cpp" />
     <ClCompile Include="Cleanup.cpp" />
     <ClCompile Include="CreateInstance.cpp" />
     <ClCompile Include="MainLoop.cpp" />
