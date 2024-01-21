@@ -8,6 +8,7 @@ void Volken::initVulkan() {
 
 	createInstance();
 	setupDebugMessenger();
+	createSurface();
 	pickPhysicalDevice();
 	createLogicalDevice();
 }

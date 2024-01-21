@@ -57,6 +57,9 @@
     <ClCompile Include="LogicalDevice.cpp">
       <Filter>Source Files\Volken\initVulkan</Filter>
     </ClCompile>
+    <ClCompile Include="Surface.cpp">
+      <Filter>Source Files\Volken\initVulkan</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">

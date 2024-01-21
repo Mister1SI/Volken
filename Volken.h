@@ -1,7 +1,11 @@
 #pragma once
 
+#define VK_USE_PLATFORM_WIN32_KHR
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#define GLFW_EXPOSE_NATIVE_WIN32
+#include <GLFW/glfw3native.h>
+
 
 #include <stdexcept>
 #include <vector>
@@ -37,7 +41,7 @@ private:
 	bool isDeviceSuitable(VkPhysicalDevice device);
 	QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
 	void createLogicalDevice();
-	
+	void createSurface();
 
 
 	GLFWwindow* window;
@@ -48,7 +52,9 @@ private:
 	VkDevice device;
 	VkPhysicalDeviceFeatures deviceFeatures{};
 	VkQueue graphicsQueue;
-	
+	VkSurfaceKHR surface;
+
+
 	char* deviceName = new char[VK_MAX_PHYSICAL_DEVICE_NAME_SIZE];
 
 

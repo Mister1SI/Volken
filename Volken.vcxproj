@@ -154,6 +154,7 @@
     <ClCompile Include="QueueFamilies.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="Setup.cpp" />
+    <ClCompile Include="Surface.cpp" />
     <ClCompile Include="Volken.cpp" />
   </ItemGroup>
   <ItemGroup>
