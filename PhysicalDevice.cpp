@@ -33,7 +33,7 @@ bool Volken::isDeviceSuitable(VkPhysicalDevice device) {
 
 	QueueFamilyIndices indices = findQueueFamilies(device);
 
-	bool suitable = properties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU && features.geometryShader && indices.graphicsFamily.has_value();
+	bool suitable = properties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU && features.geometryShader && indices.isComplete();
 
 	if (suitable) {
 		deviceName = (char*)calloc(256, 1);

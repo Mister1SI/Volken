@@ -11,9 +11,18 @@
 #include <vector>
 #include <iostream>
 #include <optional>
+#include <set>
+
+
+
 
 struct QueueFamilyIndices {
 		std::optional<uint32_t> graphicsFamily;
+		std::optional<uint32_t> presentFamily;
+
+		bool isComplete() {
+			return graphicsFamily.has_value() && presentFamily.has_value();
+		}
 };
 
 
@@ -52,6 +61,7 @@ private:
 	VkDevice device;
 	VkPhysicalDeviceFeatures deviceFeatures{};
 	VkQueue graphicsQueue;
+	VkQueue presentQueue;
 	VkSurfaceKHR surface;
 
 
