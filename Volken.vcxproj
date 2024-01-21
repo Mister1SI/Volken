@@ -148,6 +148,7 @@
     <ClCompile Include="CreateInstance.cpp" />
     <ClCompile Include="DebugCallback.cpp" />
     <ClCompile Include="GetRequiredExtentsions.cpp" />
+    <ClCompile Include="LogicalDevice.cpp" />
     <ClCompile Include="MainLoop.cpp" />
     <ClCompile Include="PhysicalDevice.cpp" />
     <ClCompile Include="QueueFamilies.cpp" />

@@ -36,7 +36,7 @@ private:
 	void pickPhysicalDevice();
 	bool isDeviceSuitable(VkPhysicalDevice device);
 	QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
-
+	void createLogicalDevice();
 	
 
 
@@ -45,6 +45,8 @@ private:
 	const uint32_t WIDTH = 800;
 	const uint32_t HEIGHT = 600;
 	VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+	VkDevice device;
+	char* deviceName = new char[VK_MAX_PHYSICAL_DEVICE_NAME_SIZE];
 
 	std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"

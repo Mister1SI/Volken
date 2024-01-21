@@ -35,5 +35,12 @@ bool Volken::isDeviceSuitable(VkPhysicalDevice device) {
 
 	bool suitable = properties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU && features.geometryShader && indices.graphicsFamily.has_value();
 
+	if (suitable) {
+		deviceName = (char*)calloc(256, 1);
+		for (int i = 0; i < VK_MAX_PHYSICAL_DEVICE_NAME_SIZE; i++) {
+			deviceName[i] = properties.deviceName[i];
+		}
+	}
+
 	return suitable;
 }
