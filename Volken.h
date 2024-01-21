@@ -7,7 +7,6 @@
 #include <vector>
 #include <iostream>
 #include <optional>
-#include <string>
 
 struct QueueFamilyIndices {
 		std::optional<uint32_t> graphicsFamily;
@@ -46,7 +45,6 @@ private:
 	const uint32_t WIDTH = 800;
 	const uint32_t HEIGHT = 600;
 	VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-	string deviceName;
 
 	std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"
