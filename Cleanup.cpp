@@ -1,6 +1,8 @@
 #include "Volken.h"
 
 void Volken::cleanup() {
+	vkDestroyDevice(device, nullptr);
+
 	if (enableValidationLayers) {
 		DestroyDebugUtilsMessengerEXT(instance, debugMessenger, nullptr);
 	}

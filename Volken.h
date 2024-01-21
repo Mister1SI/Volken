@@ -46,7 +46,14 @@ private:
 	const uint32_t HEIGHT = 600;
 	VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
 	VkDevice device;
+	VkPhysicalDeviceFeatures deviceFeatures{};
+	VkQueue graphicsQueue;
+	
 	char* deviceName = new char[VK_MAX_PHYSICAL_DEVICE_NAME_SIZE];
+
+
+
+
 
 	std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"
