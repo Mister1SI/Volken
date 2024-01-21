@@ -48,6 +48,12 @@
     <ClCompile Include="DebugCallback.cpp">
       <Filter>Source Files\Volken\initVulkan</Filter>
     </ClCompile>
+    <ClCompile Include="PhysicalDevice.cpp">
+      <Filter>Source Files\Volken\initVulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueFamilies.cpp">
+      <Filter>Source Files\Volken\initVulkan</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">

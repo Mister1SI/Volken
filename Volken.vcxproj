@@ -149,6 +149,8 @@
     <ClCompile Include="DebugCallback.cpp" />
     <ClCompile Include="GetRequiredExtentsions.cpp" />
     <ClCompile Include="MainLoop.cpp" />
+    <ClCompile Include="PhysicalDevice.cpp" />
+    <ClCompile Include="QueueFamilies.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="Setup.cpp" />
     <ClCompile Include="Volken.cpp" />

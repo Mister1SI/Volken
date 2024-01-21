@@ -6,9 +6,18 @@
 #include <stdexcept>
 #include <vector>
 #include <iostream>
+#include <optional>
+#include <string>
+
+struct QueueFamilyIndices {
+		std::optional<uint32_t> graphicsFamily;
+};
+
+
 
 class Volken {
 private:
+	
 	void initVulkan();
 	void mainLoop();
 	void cleanup();
@@ -24,12 +33,21 @@ private:
 	void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator);
 	VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
 		const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger);
+	void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
+	void pickPhysicalDevice();
+	bool isDeviceSuitable(VkPhysicalDevice device);
+	QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
+
+	
 
 
 	GLFWwindow* window;
 	VkInstance instance;
 	const uint32_t WIDTH = 800;
 	const uint32_t HEIGHT = 600;
+	VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+	string deviceName;
+
 	std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"
 	};
@@ -38,7 +56,6 @@ private:
 #else
 	const bool enableValidationLayers = true;
 #endif 
-
 	VkDebugUtilsMessengerEXT debugMessenger;
 
 
