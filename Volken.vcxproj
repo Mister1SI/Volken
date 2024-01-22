@@ -154,6 +154,7 @@
     <ClCompile Include="MainLoop.cpp" />
     <ClCompile Include="PhysicalDevice.cpp" />
     <ClCompile Include="QueueFamilies.cpp" />
+    <ClCompile Include="RenderPass.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="Setup.cpp" />
     <ClCompile Include="Surface.cpp" />

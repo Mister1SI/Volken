@@ -9,6 +9,7 @@ void Volken::cleanup() {
 
 
 	vkDestroyPipelineLayout(device, pipelineLayout, nullptr);
+	vkDestroyRenderPass(device, renderPass, nullptr);
 	for (auto imageView : imageViews) { vkDestroyImageView(device, imageView, nullptr); }
 	vkDestroySwapchainKHR(device, swapchain, nullptr);
 	vkDestroyDevice(device, nullptr);
