@@ -148,6 +148,7 @@
     <ClCompile Include="CreateGraphicsPipeline.cpp" />
     <ClCompile Include="CreateInstance.cpp" />
     <ClCompile Include="DebugCallback.cpp" />
+    <ClCompile Include="Framebuffers.cpp" />
     <ClCompile Include="GetRequiredExtentsions.cpp" />
     <ClCompile Include="ImageViews.cpp" />
     <ClCompile Include="LogicalDevice.cpp" />

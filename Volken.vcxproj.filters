@@ -78,6 +78,9 @@
     <ClCompile Include="RenderPass.cpp">
       <Filter>Source Files\Volken\pipeline</Filter>
     </ClCompile>
+    <ClCompile Include="Framebuffers.cpp">
+      <Filter>Source Files\Volken\pipeline</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">

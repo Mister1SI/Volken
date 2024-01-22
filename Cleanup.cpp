@@ -6,7 +6,7 @@ void Volken::cleanup() {
 	if (enableValidationLayers) {
 		DestroyDebugUtilsMessengerEXT(instance, debugMessenger, nullptr);
 	}
-
+	for (auto framebuffer : framebuffers) { vkDestroyFramebuffer(device, framebuffer, nullptr); }
 	vkDestroyPipeline(device, graphicsPipeline, nullptr);
 	vkDestroyPipelineLayout(device, pipelineLayout, nullptr);
 	vkDestroyRenderPass(device, renderPass, nullptr);

@@ -88,8 +88,8 @@ private:
 	void createGraphicsPipeline();
 	VkShaderModule createShaderModule(const std::vector<char>& code);
 	void createRenderPass();
-
-
+	void createFramebuffers();
+	std::vector<VkFramebuffer> framebuffers;
 
 
 	// Debug
