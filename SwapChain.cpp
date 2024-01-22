@@ -119,3 +119,36 @@ void Volken::createSwapChain() {
 	swapchainExtent = extent;
 
 }
+
+void Volken::recreateSwapchain() {
+
+	int width = 0, height = 0;
+	glfwGetFramebufferSize(window, &width, &height);
+	while (width == 0 || height == 0) {
+		glfwGetFramebufferSize(window, &width, &height);
+		glfwWaitEvents();
+	}
+
+	vkDeviceWaitIdle(device);
+
+	cleanSwapchain();
+
+	createSwapChain();
+	createImageViews();
+	createFramebuffers();
+
+}
+
+void Volken::cleanSwapchain() {
+
+	for (size_t i = 0; i < framebuffers.size(); i++) {
+		vkDestroyFramebuffer(device, framebuffers[i], nullptr);
+	}
+
+	for (size_t i = 0; i < imageViews.size(); i++) {
+		vkDestroyImageView(device, imageViews[i], nullptr);
+	}
+
+	vkDestroySwapchainKHR(device, swapchain, nullptr);
+
+}

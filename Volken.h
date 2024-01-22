@@ -18,6 +18,8 @@
 #include <fstream>
 
 
+
+
 const int MAX_FRAMES_IN_FLIGHT = 2;
 
 struct QueueFamilyIndices {
@@ -51,8 +53,15 @@ static std::vector<char> readFile(const std::string& filename) {
 }
 
 class Volken {
+
+public:
+	// Framebuffer callback
+	static void framebufferResizeCallback(GLFWwindow* window, int width, int height) {
+		Volken* app = reinterpret_cast<Volken*>(glfwGetWindowUserPointer(window));
+		(*app).framebufferResized = true;
+	}
+
 private:
-	
 	// Main methods
 	void initVulkan();
 	void mainLoop();
@@ -102,6 +111,10 @@ private:
 	// Drawing and sync
 	void createSyncObjects();
 
+	// Swapchain recreation
+	void recreateSwapchain();
+	void cleanSwapchain();
+	
 
 
 
@@ -147,6 +160,8 @@ private:
 	std::vector<VkSemaphore> imageAvailableSemaphores;
 	std::vector<VkSemaphore> renderFinishedSemaphores;
 	std::vector<VkFence> inFlightFences;
+	bool framebufferResized;
+
 
 
 	std::vector<const char*> validationLayers = {
