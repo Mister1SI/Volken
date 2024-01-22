@@ -33,14 +33,35 @@ bool Volken::isDeviceSuitable(VkPhysicalDevice device) {
 
 	QueueFamilyIndices indices = findQueueFamilies(device);
 
-	bool suitable = properties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU && features.geometryShader && indices.isComplete();
+	
+
+	bool swapChainAdequate = false;
+	if (deviceExtensionSupport(device)) {
+		SwapChainSupportDetails details = querySwapChainSupport(device);
+		swapChainAdequate = !details.formats.empty() && !details.presentModes.empty();
+	}
+	bool suitable = properties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU && features.geometryShader && indices.isComplete()
+		&& deviceExtensionSupport(device) && swapChainAdequate;
 
 	if (suitable) {
-		deviceName = (char*)calloc(256, 1);
-		for (int i = 0; i < VK_MAX_PHYSICAL_DEVICE_NAME_SIZE; i++) {
-			deviceName[i] = properties.deviceName[i];
-		}
+		memcpy(deviceName, properties.deviceName, 256);
 	}
 
 	return suitable;
+}
+
+bool Volken::deviceExtensionSupport(VkPhysicalDevice device) {
+	uint32_t extensionCount;
+	vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, nullptr);
+
+	std::vector<VkExtensionProperties> availableExtensions(extensionCount);
+	vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, availableExtensions.data());
+
+	std::set<std::string> requiredExtensions(deviceExtensions.begin(), deviceExtensions.end());
+
+	for (const auto& extension : availableExtensions) {
+		requiredExtensions.erase(extension.extensionName);
+	}
+
+	return requiredExtensions.empty();
 }

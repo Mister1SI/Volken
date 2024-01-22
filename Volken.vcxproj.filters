@@ -60,6 +60,9 @@
     <ClCompile Include="Surface.cpp">
       <Filter>Source Files\Volken\initVulkan</Filter>
     </ClCompile>
+    <ClCompile Include="SwapChain.cpp">
+      <Filter>Source Files\Volken\initVulkan</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">
