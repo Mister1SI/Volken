@@ -126,7 +126,7 @@ private:
 	std::vector<VkImageView> imageViews;
 	VkRenderPass renderPass;
 	VkPipelineLayout pipelineLayout;
-
+	VkPipeline graphicsPipeline;
 
 	std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"
