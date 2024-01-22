@@ -90,6 +90,9 @@ private:
 	void createRenderPass();
 	void createFramebuffers();
 	std::vector<VkFramebuffer> framebuffers;
+	void createCommandPool();
+	void createCommandBuffer();
+	void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
 
 
 	// Debug
@@ -127,6 +130,10 @@ private:
 	VkRenderPass renderPass;
 	VkPipelineLayout pipelineLayout;
 	VkPipeline graphicsPipeline;
+	VkCommandPool commandPool;
+	VkCommandBuffer commandBuffer;
+
+
 
 	std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"

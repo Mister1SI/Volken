@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="CheckValidationLayerSupport.cpp" />
     <ClCompile Include="Cleanup.cpp" />
+    <ClCompile Include="CommandPool.cpp" />
     <ClCompile Include="CreateGraphicsPipeline.cpp" />
     <ClCompile Include="CreateInstance.cpp" />
     <ClCompile Include="DebugCallback.cpp" />
