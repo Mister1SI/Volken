@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Volken\initVulkan">
       <UniqueIdentifier>{82b260e0-360b-48a9-9017-8ab281f85ece}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Volken\pipeline">
+      <UniqueIdentifier>{2a6a90b1-5b93-48a9-bbdd-8c48a42db88e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders">
+      <UniqueIdentifier>{79c687c3-4e92-4c4b-8560-7d34e51a90c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Volken.cpp">
@@ -66,10 +72,21 @@
     <ClCompile Include="ImageViews.cpp">
       <Filter>Source Files\Volken\initVulkan</Filter>
     </ClCompile>
+    <ClCompile Include="CreateGraphicsPipeline.cpp">
+      <Filter>Source Files\Volken\pipeline</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader.vert">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shader.frag">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

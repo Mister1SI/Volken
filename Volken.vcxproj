@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="CheckValidationLayerSupport.cpp" />
     <ClCompile Include="Cleanup.cpp" />
+    <ClCompile Include="CreateGraphicsPipeline.cpp" />
     <ClCompile Include="CreateInstance.cpp" />
     <ClCompile Include="DebugCallback.cpp" />
     <ClCompile Include="GetRequiredExtentsions.cpp" />
@@ -161,6 +162,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader.frag" />
+    <None Include="shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
