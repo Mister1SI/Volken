@@ -84,6 +84,9 @@
     <ClCompile Include="CommandPool.cpp">
       <Filter>Source Files\Volken\pipeline</Filter>
     </ClCompile>
+    <ClCompile Include="Draw.cpp">
+      <Filter>Source Files\Volken</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Volken.h">

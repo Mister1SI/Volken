@@ -7,7 +7,9 @@ void Volken::cleanup() {
 		DestroyDebugUtilsMessengerEXT(instance, debugMessenger, nullptr);
 	}
 
-
+	vkDestroySemaphore(device, imageAvailableSemaphore, nullptr);
+	vkDestroySemaphore(device, renderFinishedSemaphore, nullptr);
+	vkDestroyFence(device, inFlightFence, nullptr);
 	vkDestroyCommandPool(device, commandPool, nullptr);
 	for (auto framebuffer : framebuffers) { vkDestroyFramebuffer(device, framebuffer, nullptr); }
 	vkDestroyPipeline(device, graphicsPipeline, nullptr);

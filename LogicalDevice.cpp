@@ -35,5 +35,6 @@ void Volken::createLogicalDevice() {
 		throw std::runtime_error("Failed to create logical device");
 	}
 	vkGetDeviceQueue(device, indices.graphicsFamily.value(), 0, &graphicsQueue);
+	vkGetDeviceQueue(device, indices.presentFamily.value(), 0, &presentQueue);
 }
 

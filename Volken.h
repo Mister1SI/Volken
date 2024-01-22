@@ -58,6 +58,10 @@ private:
 	void mainLoop();
 	void cleanup();
 
+	void draw();
+
+
+
 	// Device Functions
 	void createInstance();
 	bool checkValidationLayerSupport();
@@ -93,6 +97,12 @@ private:
 	void createCommandPool();
 	void createCommandBuffer();
 	void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
+
+
+	// Drawing and sync
+	void createSyncObjects();
+
+
 
 
 	// Debug
@@ -132,7 +142,9 @@ private:
 	VkPipeline graphicsPipeline;
 	VkCommandPool commandPool;
 	VkCommandBuffer commandBuffer;
-
+	VkSemaphore imageAvailableSemaphore;
+	VkSemaphore renderFinishedSemaphore;
+	VkFence inFlightFence;
 
 
 	std::vector<const char*> validationLayers = {
