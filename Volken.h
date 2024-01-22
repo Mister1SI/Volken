@@ -42,7 +42,7 @@ private:
 	void mainLoop();
 	void cleanup();
 
-
+	// Device Functions
 	void createInstance();
 	bool checkValidationLayerSupport();
 	std::vector<const char*> getRequiredExtensions();
@@ -64,6 +64,12 @@ private:
 	VkPresentModeKHR choosePresentMode(const std::vector<VkPresentModeKHR>& availableModes);
 	VkExtent2D chooseExtent(const VkSurfaceCapabilitiesKHR& capabilities);
 	void createSwapChain();
+
+	// Images
+	void createImageViews();
+
+
+
 
 
 	// Debug
@@ -97,6 +103,9 @@ private:
 	std::vector<VkImage> swapchainImages;
 	VkFormat swapchainImageFormat;
 	VkExtent2D swapchainExtent;
+	std::vector<VkImageView> imageViews;
+
+
 
 	std::vector<const char*> validationLayers = {
 		"VK_LAYER_KHRONOS_validation"
