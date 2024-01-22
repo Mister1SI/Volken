@@ -17,7 +17,7 @@ void Volken::initVulkan() {
 	createGraphicsPipeline();
 	createFramebuffers();
 	createCommandPool();
-	createCommandBuffer();
+	createCommandBuffers();
 	createSyncObjects();
 }
 

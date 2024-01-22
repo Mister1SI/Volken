@@ -20,8 +20,4 @@ void Volken::createFramebuffers() {
             throw std::runtime_error("Failed to create framebuffer");
         }
     }
-	
-
-
-
 }

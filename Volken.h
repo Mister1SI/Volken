@@ -18,7 +18,7 @@
 #include <fstream>
 
 
-
+const int MAX_FRAMES_IN_FLIGHT = 2;
 
 struct QueueFamilyIndices {
 		std::optional<uint32_t> graphicsFamily;
@@ -95,7 +95,7 @@ private:
 	void createFramebuffers();
 	std::vector<VkFramebuffer> framebuffers;
 	void createCommandPool();
-	void createCommandBuffer();
+	void createCommandBuffers();
 	void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
 
 
@@ -121,6 +121,8 @@ private:
 
 
 	// Members
+	uint32_t currentFrame = 0;
+
 	GLFWwindow* window;
 	VkInstance instance;
 	const uint32_t WIDTH = 800;
@@ -141,10 +143,10 @@ private:
 	VkPipelineLayout pipelineLayout;
 	VkPipeline graphicsPipeline;
 	VkCommandPool commandPool;
-	VkCommandBuffer commandBuffer;
-	VkSemaphore imageAvailableSemaphore;
-	VkSemaphore renderFinishedSemaphore;
-	VkFence inFlightFence;
+	std::vector<VkCommandBuffer> commandBuffers;
+	std::vector<VkSemaphore> imageAvailableSemaphores;
+	std::vector<VkSemaphore> renderFinishedSemaphores;
+	std::vector<VkFence> inFlightFences;
 
 
 	std::vector<const char*> validationLayers = {
