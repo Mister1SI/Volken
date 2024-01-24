@@ -154,6 +154,7 @@
     <ClCompile Include="CreateGraphicsPipeline.cpp" />
     <ClCompile Include="CreateInstance.cpp" />
     <ClCompile Include="DebugCallback.cpp" />
+    <ClCompile Include="Descriptor.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Framebuffers.cpp" />
     <ClCompile Include="GetRequiredExtentsions.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Setup.cpp" />
     <ClCompile Include="Surface.cpp" />
     <ClCompile Include="SwapChain.cpp" />
+    <ClCompile Include="UniformBuffer.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="Volken.cpp" />
   </ItemGroup>

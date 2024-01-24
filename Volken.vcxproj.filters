@@ -25,6 +25,9 @@
     <Filter Include="Resource Files\shaders">
       <UniqueIdentifier>{79c687c3-4e92-4c4b-8560-7d34e51a90c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Volken\pipeline\buffers">
+      <UniqueIdentifier>{64c856aa-0edc-42e2-81eb-02c11b7a8764}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Volken.cpp">
@@ -87,14 +90,20 @@
     <ClCompile Include="Draw.cpp">
       <Filter>Source Files\Volken</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBuffer.cpp">
+    <ClCompile Include="Descriptor.cpp">
       <Filter>Source Files\Volken\pipeline</Filter>
     </ClCompile>
     <ClCompile Include="Buffer.cpp">
-      <Filter>Source Files\Volken\pipeline</Filter>
+      <Filter>Source Files\Volken\pipeline\buffers</Filter>
     </ClCompile>
     <ClCompile Include="IndexBuffer.cpp">
-      <Filter>Source Files\Volken\pipeline</Filter>
+      <Filter>Source Files\Volken\pipeline\buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="UniformBuffer.cpp">
+      <Filter>Source Files\Volken\pipeline\buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Source Files\Volken\pipeline\buffers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

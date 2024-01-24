@@ -7,6 +7,9 @@
 #include <GLFW/glfw3native.h>
 
 #include <glm.hpp>
+#include <gtc/matrix_transform.hpp>
+
+
 
 #include <stdexcept>
 #include <vector>
@@ -18,7 +21,7 @@
 #include <algorithm>
 #include <fstream>
 #include <array>
-
+#include <chrono>
 
 
 struct Vertex {
@@ -65,6 +68,12 @@ const std::vector<uint16_t> indices = {
 
 
 const int MAX_FRAMES_IN_FLIGHT = 2;
+
+struct UniformBufferObject {
+	glm::mat4 model;
+	glm::mat4 view;
+	glm::mat4 proj;
+};
 
 struct QueueFamilyIndices {
 		std::optional<uint32_t> graphicsFamily;
@@ -161,10 +170,12 @@ private:
 	// Data Buffers
 	void createVertexBuffer();
 	void createIndexBuffer();
+	void createUniformBuffers();
+	void updateUniformBuffer(uint32_t currentImage);
 	uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
 	void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer& buffer, VkDeviceMemory& bufferMemory);
 	void copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size);
-
+	void createDesciptorSetLayout();
 
 
 	// Debug
@@ -202,6 +213,7 @@ private:
 	VkExtent2D swapchainExtent;
 	std::vector<VkImageView> imageViews;
 	VkRenderPass renderPass;
+	VkDescriptorSetLayout descriptorSetLayout;
 	VkPipelineLayout pipelineLayout;
 	VkPipeline graphicsPipeline;
 	VkCommandPool commandPool;
@@ -214,7 +226,9 @@ private:
 	VkDeviceMemory vertexBufferMemory;
 	VkBuffer indexBuffer;
 	VkDeviceMemory indexBufferMemory;
-
+	std::vector<VkBuffer> uniformBuffers;
+	std::vector<VkDeviceMemory> uniformBuffersMemory;
+	std::vector<void*> uniformBuffersMapped;
 
 
 	std::vector<const char*> validationLayers = {

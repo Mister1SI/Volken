@@ -18,11 +18,13 @@ void Volken::initVulkan() {
 	createSwapChain();
 	createImageViews();
 	createRenderPass();
+	createDesciptorSetLayout();
 	createGraphicsPipeline();
 	createFramebuffers();
 	createCommandPool();
 	createVertexBuffer();
 	createIndexBuffer();
+	createUniformBuffers();
 	createCommandBuffers();
 	createSyncObjects();
 }
